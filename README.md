@@ -1,3 +1,9 @@
+# aws-solutions-architect-associate-notes
+
+Here are some notes on various AWS services and technologies as I went through AWS Solution Architect Training.
+
+For better readability, I have added [Hugo](https://gohugo.io/) support using Docker container.
+
 * [01 - AWS Compute Services](01-Compute.md)
 * [02 - VPC Networking](02-Networking.md)
 * [03 - AWS Storage](03-Storage.md)
@@ -9,11 +15,17 @@
 
 ---
 
+### Building Site using Hugo
+
+#### Using Docker Engine
 ```
-# Using Docker Engine
 docker image build -t hugo-aws-study .
 docker container run --rm -it -p 8080:80 hugo-aws-study
+```
 
-# Using Docker Compose
+#### Using Docker Compose
+```
 docker compose up
 ```
+
+Url - [http://localhost:8080/](http://localhost:8080/)
