@@ -1,0 +1,13 @@
+languageCode = "en-us"
+title = "Aws Solutions Architect Associate Notes"
+theme = "hugo-theme-learn"
+
+[params]
+  AuthorName = "Aayush Tuladhar"
+  GitHubUser = "arttuladhar"
+  SidebarRecentLimit = 5
+  Subtitle = "Certification Study Guide"
+  themeVariant = "blue"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
