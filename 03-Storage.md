@@ -1,6 +1,20 @@
 ---
 title: 03 - AWS Storage
 ---
+- [Amazon S3](#amazon-s3)
+  - [Buckets](#buckets)
+  - [Versioning](#versioning)
+  - [Amazon S3 Security](#amazon-s3-security)
+  - [Storage Classes](#storage-classes)
+    - [S3 Standard](#s3-standard)
+    - [S3 Standard Infrequent Access (Standard-IA)](#s3-standard-infrequent-access-standard-ia)
+    - [S3 One Zone Infrequent Access (OneZone-IA)](#s3-one-zone-infrequent-access-onezone-ia)
+    - [Amazon S3 Intelligent Tiering](#amazon-s3-intelligent-tiering)
+    - [Glacier](#glacier)
+      - [Glacier Deep Archive](#glacier-deep-archive)
+  - [S3 Cross Region Replication (CRR)](#s3-cross-region-replication-crr)
+- [Amazon Elastic File System (EFS)](#amazon-elastic-file-system-efs)
+- [AWS Storage Gateway](#aws-storage-gateway)
 
 ## Amazon S3
 

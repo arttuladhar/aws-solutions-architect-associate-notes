@@ -1,6 +1,8 @@
 ---
 title: 08 - Hybrid and Scaling
 ---
+- [Snowball and Snowball Edge](#snowball-and-snowball-edge)
+- [Snowmobile](#snowmobile)
 
 ## Snowball and Snowball Edge
 

@@ -1,6 +1,14 @@
 ---
 title: 04 - Network and Content Delivery
 ---
+- [Amazon CloudFront](#amazon-cloudfront)
+- [Amazon Route 53](#amazon-route-53)
+- [API Gateway](#api-gateway)
+- [AWS Direct Connect](#aws-direct-connect)
+- [AWS Elastic Load Balancers (ELB)](#aws-elastic-load-balancers-elb)
+    - [Classic Load Balancers](#classic-load-balancers)
+    - [Application Load Balancers](#application-load-balancers)
+    - [Network Load Balancers](#network-load-balancers)
 
 ## Amazon CloudFront
 
@@ -54,13 +62,13 @@ title: 04 - Network and Content Delivery
 * An elastic load balancer has a DNS record, which allows access to the external side
 * ELBs cannot go cross-region. You must create one per region
 
-### Classic Load Balancers
+#### Classic Load Balancers
 * CLB use Listeners and EC2 instances are directly registered as targets to CLB
 * Support L3 and L4 (TCP and SSL) and some HTTP/S features
 * Supports 1 SSL certificate per CLB - can get expensive for complex projects
 * Sticky sessions can be enabled for CLB
 
-### Application Load Balancers
+#### Application Load Balancers
 * Operates on L7 of the OSI model
 * ALB has Listeners, Rules and Target Groups to route traffic
 * ALBs are now recommend as the default LB for VPCs. They perform better than CLBs and are most always cheaper.
@@ -70,7 +78,7 @@ title: 04 - Network and Content Delivery
 * ALBs support EC2, ECS, EKS, Lambda, HTTPS, HTTP/2 and WebSockets, and they can be integrated with AWS Web Application Firewall (WAF)
 * Sticky sessions can be enabled for ALB
   
-### Network Load Balancers
+#### Network Load Balancers
 * NLB user Listeners and Target Groups to route traffic
 * NLB is for high network throughput applications
 

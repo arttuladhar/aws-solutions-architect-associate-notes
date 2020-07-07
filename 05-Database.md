@@ -2,6 +2,18 @@
 title: 05 - AWS Database Services
 ---
 
+- [Amazon RDS (Relational Database Service)](#amazon-rds-relational-database-service)
+  - [RDS Multi-AZ](#rds-multi-az)
+  - [RDS Read Replica](#rds-read-replica)
+- [Amazon Aurora](#amazon-aurora)
+  - [Aurora Endpoints](#aurora-endpoints)
+  - [Aurora Serverless](#aurora-serverless)
+- [DynamoDB](#dynamodb)
+    - [DynamoDB Indexes](#dynamodb-indexes)
+    - [DynamoDB Streams](#dynamodb-streams)
+    - [DynamoDb Performance and Billing](#dynamodb-performance-and-billing)
+- [Database Migration Service (DMS)](#database-migration-service-dms)
+
 ## Amazon RDS (Relational Database Service)
 
 * RDS is a Database as a Service (DBaaS) product. It can be used to provision a fully functional database without the admin overhead traditionally associated with DB platforms
@@ -90,7 +102,7 @@ title: 05 - AWS Database Services
   * **Partition Key** and Sort Key is composed of two of more attributes
   * **Secondary Indexes** allows you to query the data in the table using the alternate key
 
-### DynamoDB Indexes
+#### DynamoDB Indexes
 * Indexes provide an alternative representation of data in a table, which is useful for application with varying query demands
 * Indexes come in two forms: Local Secondary Indexes (LSI) and Global Secondary Indexes (GSI)
 * Indexes are interacted with as though they are table, but they are just an alternate representation of data in an existing table
@@ -100,7 +112,7 @@ title: 05 - AWS Database Services
 * LSIs must be created at the time of creation of table. GSI can be created at any point after the table is created.
 * You can define up to 20 GSI and 5 LSI per table
 
-### DynamoDB Streams
+#### DynamoDB Streams
 
 * When enabled, streams provide an ordered list of changes that occur to items within a DynamoDB table
 * A stream is a rolling 24-hour window of changes
@@ -112,7 +124,7 @@ title: 05 - AWS Database Services
   * `NEW_AND_OLD_IMAGES` - Both the new and old versions of the items are added to the stream.
 * Streams can be integrated with AWS Lambda, invoking a function whenever items are changed in a DynamoDB table (a DB trigger)
 
-### DynamoDb Performance and Billing
+#### DynamoDb Performance and Billing
 
 * DynamoDB has two read/write capacity modes: **Provisioned throughput** (default) and **On-Demand** mode
 * When using On-Demand mode, DynamoDB automatically scales to handle performance demands and bills a per-request charge

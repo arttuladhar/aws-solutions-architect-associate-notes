@@ -1,7 +1,26 @@
 ---
 title: 01 - AWS Compute Services
 ---
-
+- [Elastic Cloud Compute (EC2)](#elastic-cloud-compute-ec2)
+  - [Instance Profile](#instance-profile)
+  - [Instance Metadata](#instance-metadata)
+  - [Placement Groups](#placement-groups)
+    - [Cluster Placement Group (CPG)](#cluster-placement-group-cpg)
+    - [Partition Placement Group (PPG)](#partition-placement-group-ppg)
+    - [Spread Placement Group (SPG)](#spread-placement-group-spg)
+  - [User Data](#user-data)
+  - [EC2 Pricing](#ec2-pricing)
+  - [On-Demand](#on-demand)
+  - [Reserved Instances](#reserved-instances)
+  - [Spot Instances](#spot-instances)
+  - [Savings Plans](#savings-plans)
+  - [Dedicated Hosts](#dedicated-hosts)
+- [Amazon Machine Image (AMI)](#amazon-machine-image-ami)
+- [Amazon Elastic Block Storage (EBS)](#amazon-elastic-block-storage-ebs)
+  - [EBS Volume Types](#ebs-volume-types)
+- [AWS Lambda](#aws-lambda)
+- [Amazon Elastic Container Service (ECS)](#amazon-elastic-container-service-ecs)
+- [Auto Scaling Groups (ASG)](#auto-scaling-groups-asg)
 
 ## Elastic Cloud Compute (EC2)
 
@@ -25,7 +44,7 @@ title: 01 - AWS Compute Services
 
 * Instance metadata can be used to access information about current instance from the instance.
 * It allows applications running within EC2 to have visibility into their environment.
-* E.g, curl `http://169.254.169.254/latest/meta-data` provides infromation about intance type, current ip etc.
+* E.g, curl `http://169.254.169.254/latest/meta-data` provides information about instance type, current ip etc.
 
 ### Placement Groups
 
@@ -34,7 +53,7 @@ title: 01 - AWS Compute Services
 
 #### Cluster Placement Group (CPG)
 * Places instances physically near other in a single availability zone
-* It works with Enhanced Networking for deliverying maximum performance
+* It works with Enhanced Networking for delivering maximum performance
 
 #### Partition Placement Group (PPG)
 * Instances deployed into a partition placement group are separated into partitions, each occupying isolated rack in AZs
@@ -67,18 +86,18 @@ EC2 has 5 pricing models.
 * Use Case - Long-running, Critical , Known / Understood, and Consistent workload systems
 
 ### Spot Instances
-* You can save upto 90% compared to on-demand instances
+* You can save up to 90% compared to on-demand instances
 * Allow consumption of spare AWS capacity at really reduced rate.
 * Instances are provided to you as long as your bid price is above the spot price, and you only ever pay the spot price. If your bid is exceeded, instances are terminated with **two-minute-warning**
-* Use Case - Non critical workoads, burst workloads or consistent non-critical workloads that can tolerate interruptions.
+* Use Case - Non critical workloads, burst workloads or consistent non-critical workloads that can tolerate interruptions.
 * Not good options for long running jobs that cannot tolerate interruptions.
 
 ### Savings Plans
-* Flexible pricing model that offer low price on EC2 or Fargate usage, in exchange for a commitment to a consistent amoutn of usage (measured in $/hour) for a 1 or 3 year term
+* Flexible pricing model that offer low price on EC2 or Fargate usage, in exchange for a commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term
 
 ### Dedicated Hosts
 * Dedicated host give you complete control over physical instance placement and dedicated hardware free from other customer interactions.
-* Dedicated hosts are generally used when software is licensed per core/CPU and not compatibile with running within a shared cloud environment.
+* Dedicated hosts are generally used when software is licensed per core/CPU and not compatible with running within a shared cloud environment.
 * Can be purchased On-Demand (Hourly)
 
 ---
@@ -87,7 +106,7 @@ EC2 has 5 pricing models.
 
 * AMIs are used to build instances. They store snapshot of EBS volume, launch permission and block device mapping that specify the volumes to attach to the instance when it's launched.
 * AMIs are regional service
-* You can create an AMI from existing EC2 instnace that are in either running or stopped state
+* You can create an AMI from existing EC2 instance that are in either running or stopped state
 * Community AMIs are AMIs managed by public (community). These AMI come from AWS users, and are not verified by AWS
 * AWS Marketplace - AMIs verified by AWS. AWS Marketplace consists of both Free as well as paid version of AMIs
 * Two types of AMI
@@ -101,14 +120,14 @@ EC2 has 5 pricing models.
 ## Amazon Elastic Block Storage (EBS)
 
 * Storage service that **creates** and **manages** volumes
-* EBS Volumes are durable block level storage device that you can attach to a single EC2 istance
+* EBS Volumes are durable block level storage device that you can attach to a single EC2 instance
 * Volumes are persistent, can be attached and removed from EC2 instances, and are replicated within a single AZ
 * EBS **Snapshots** are a point-in-time backup of an EBS volume stored in S3
 * Snapshots are incremental - The initial snapshot is a full copy of the volume. Future snapshots only store the data changed since the last snapshot
 * Snapshots can be used to create new volumes and are a great way to move or copy instances between AZs.
 * When creating a snapshot of the root volume of an instance of busy volume, it’s recommended the instance is powered off, or disks are “flushed”
 * Snapshots can be copied between regions, shared and automated using Data Lifecycle Manager (DLM)
-* By defualt, root volumes are deleted on termination
+* By default, root volumes are deleted on termination
 * Volume encryption uses EC2 host hardware to encrypt data at rest and In-Transit between EBS and EC2 instances
 
 ### EBS Volume Types
@@ -120,7 +139,7 @@ EC2 has 5 pricing models.
   * Ideal for large database workloads
 * Throughput Optimized HHD (st1)
   * Low cost volume storage
-  * Used for frequently accessed, throughput-intensive workoads (Streaming, BigData)
+  * Used for frequently accessed, throughput-intensive workloads (Streaming, BigData)
   * Cannot be root volume
 * Cold HDD (sc1)
   * Cheapest volume solution
@@ -134,7 +153,7 @@ EC2 has 5 pricing models.
 * Serverless Compute service offering
 * Lambda's are serverless functions. You don't need to manage or provision servers
 * Lambda functions are stateless
-* You choose the amount of memory you want to allocate to your functions and AWS Lambda allocates propotional CPU, Network, Bandwidth and Disk
+* You choose the amount of memory you want to allocate to your functions and AWS Lambda allocates proportional CPU, Network, Bandwidth and Disk
 * There are 7 runtime languages supported:
   * Ruby
   * Python
@@ -144,9 +163,9 @@ EC2 has 5 pricing models.
   * Powershell
   * Go
 * Pricing - Pay per invocation (The duration and the amount of memory used) rounded up to the nearest 100 ms. First 1M requests per month are free
-* You can adjust the duration timeout upto 15 minutes and memory upto 300 MB
+* You can adjust the duration timeout up to 15 minutes and memory up to 300 MB
 * By default, AWS executes your Lambda function code securely within a VPC. Alternatively you can enable your Lambda function to access resource inside your private VPC by providing additional VPC specific configuration
-* Labda is HA and scalable by design. Lambda can scale to 1000 os concurrent functions in seconds
+* Lambda is HA and scalable by design. Lambda can scale to 1000 os concurrent functions in seconds
 * Lambdas have Cold Starts (delayed Initial Start), if a function has not been recently been executed.
 
 ---

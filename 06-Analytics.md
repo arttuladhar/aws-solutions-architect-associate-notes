@@ -1,6 +1,13 @@
 ---
 title: 06 - Analytics
 ---
+- [Amazon Athena](#amazon-athena)
+- [Amazon EMR](#amazon-emr)
+- [Amazon Kinesis](#amazon-kinesis)
+    - [Kinesis Data Stream](#kinesis-data-stream)
+    - [Kinesis Data Firehose](#kinesis-data-firehose)
+    - [Kinesis Data Analytics](#kinesis-data-analytics)
+    - [Kinesis Video Analytics](#kinesis-video-analytics)
 
 ## Amazon Athena
 
@@ -26,13 +33,13 @@ title: 06 - Analytics
 * Scalable and Resilient
 * Consumers can access a rolling window of that data, or it can be stored in persistent storage of database products
 
-### Kinesis Data Stream
+#### Kinesis Data Stream
 
 * A Kinesis data stream can be used to collect, process, and analyze a large amount of incoming data
 * Storage for all incoming data within a 24 hour default window, which can be increased to seven days for an additional charge
 * Kinesis Data records (The basis entity written to and read from Kinesis stream, a data record can be up to 1 MB in size) are added by producers and read by consumers
 
-### Kinesis Data Firehose
+#### Kinesis Data Firehose
 
 * Reliably load streaming data into data lakes, data stores and analytics tools
 * It can capture, transform, and load streaming data into Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk
@@ -40,7 +47,7 @@ title: 06 - Analytics
 * Kinesis Data Streams can be used as the source(s) to Kinesis Data Firehose
 * Pay for only the data ingested
   
-### Kinesis Data Analytics
+#### Kinesis Data Analytics
 
 * Process and analyze real-time, streaming data
 * Can use standard SQL queries to process Kinesis data streams
@@ -49,7 +56,6 @@ title: 06 - Analytics
     * Application code – a series of SQL statements that process input and produce output
     * Output – one or more in-application streams to hold intermediate results
 
-### Kinesis Video Analytics
+#### Kinesis Video Analytics
 
 * Securely ingests and stores video and audio encoded data to consumers such as SageMaker, Rekognition or other services to apply Machine Learning and Video processing
----
