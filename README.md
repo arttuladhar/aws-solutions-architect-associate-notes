@@ -1,6 +1,6 @@
 # aws-solutions-architect-associate-notes
 
-Here are some notes on various AWS services and technologies as I went through AWS Solution Architect Training.
+Notes on various AWS services and technologies as I went through AWS Solution Architect Training.
 
 For better readability, I have added [Hugo](https://gohugo.io/) support using Docker container.
 
@@ -12,6 +12,10 @@ For better readability, I have added [Hugo](https://gohugo.io/) support using Do
 * [06 - Analytics](06-Analytics.md)
 * [07 - Application Integration](07-Application-Integration.md)
 * [08 - Hybrid and Scaling](08-Hybrid-Scaling.md)
+
+---
+
+<http://www.aayushtuladhar.com/aws-solutions-architect-associate-notes/>
 
 ---
 
