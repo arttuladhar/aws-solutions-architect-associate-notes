@@ -1,6 +1,6 @@
 # aws-solutions-architect-associate-notes
 
-Notes on various AWS services and technologies as I went through AWS Solution Architect Training.
+Notes I compiled during my learning for [AWS Solution Architect Training](https://aws.amazon.com/certification/certified-solutions-architect-associate/).
 
 For better readability, I have added [Hugo](https://gohugo.io/) support using Docker container.
 
@@ -15,19 +15,15 @@ For better readability, I have added [Hugo](https://gohugo.io/) support using Do
 
 ---
 
-<http://www.aayushtuladhar.com/aws-solutions-architect-associate-notes/>
+## Building Site using Hugo
 
----
-
-### Building Site using Hugo
-
-#### Using Docker Engine
+### Using Docker Engine
 ```
 docker image build -t hugo-aws-study .
 docker container run --rm -it -p 8080:80 hugo-aws-study
 ```
 
-#### Using Docker Compose
+### Using Docker Compose
 ```
 docker compose up
 ```
